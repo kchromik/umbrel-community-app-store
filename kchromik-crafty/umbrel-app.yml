@@ -1,0 +1,36 @@
+manifestVersion: 1
+
+id: kchromik-crafty
+category: utilities
+name: Crafty Controller
+version: "4.6.1"
+
+tagline: Weboberfläche zum Verwalten deiner Minecraft-Server
+description: >-
+  Crafty 4 ist eine self-hosted Weboberfläche, mit der du mehrere
+  Minecraft-Server (Java und Bedrock) zentral verwalten kannst. Du kannst
+  Server erstellen, starten, stoppen, Backups anlegen, Logs einsehen
+  und Dateien verwalten – alles bequem im Browser auf deinem Umbrel-Server.
+
+releaseNotes: ""
+
+developer: crafty-controller
+website: https://craftycontrol.com
+dependencies: []
+repo: https://gitlab.com/crafty-controller/crafty-4
+support: https://gitlab.com/crafty-controller/crafty-4/-/issues
+
+# Interner Port des Web-Panels im Container
+port: 8443
+
+# Lokale Icon-Datei im gleichen Ordner (kannst du später hinzufügen/ändern)
+icon: "icon.png"
+
+gallery: []
+path: ""
+
+defaultUsername: ""
+defaultPassword: ""
+
+submitter: "kchromik"
+submission: ""

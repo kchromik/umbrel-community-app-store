@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # <app-id>_<service-name>_1
+      # id = kchromik-crafty, service-name = crafty
+      APP_HOST: kchromik-crafty_crafty_1
+      APP_PORT: "8443"
+
+  crafty:
+    image: registry.gitlab.com/crafty-controller/crafty-4:4.6.1
+    restart: unless-stopped
+    stop_grace_period: 1m
+
+    environment:
+      TZ: Europe/Berlin
+
+    volumes:
+      - ${APP_DATA_DIR}/data/backups:/crafty/backups
+      - ${APP_DATA_DIR}/data/logs:/crafty/logs
+      - ${APP_DATA_DIR}/data/servers:/crafty/servers
+      - ${APP_DATA_DIR}/data/config:/crafty/app/config
+      - ${APP_DATA_DIR}/data/import:/crafty/import
+
+    ports:
+      # Extern: 10443 → intern: 8443 (Crafty HTTPS)
+      - "10443:8443"
